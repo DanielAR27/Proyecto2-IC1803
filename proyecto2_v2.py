@@ -586,16 +586,18 @@ def turno_usuario(fila, columna, tablero):
         horizontal_o_vertical = randint(0, 1)
         # Si la respuesta es cero, se colocará horizontal.
         if horizontal_o_vertical == 0:
+            tmp_columna = columna
             # Moverse a la izquierda de la fila.
-            for i in reversed(range(0, columna)):
+            while tmp_columna - 1 >= 0:
                 # Si se encuentra una planta o una semilla.
                 # Se deja de poner ciclovía.
-                if tablero[fila][i] == "🌻" or tablero[fila][i] == "🌱":
+                if (tablero[fila][tmp_columna-1] == "🌻" or
+                        tablero[fila][tmp_columna-1] == "🌱"):
                     break
                 # De no ser así, se colocará ciclovia.
                 else:
-                    tablero[fila][i] = "🚲"
-
+                    tablero[fila][tmp_columna-1] = "🚲"
+                tmp_columna -= 1
             # Moverse a la derecha de la fila.
             for i in range(columna, len(tablero[0])):
                 # Si se encuentra una planta o una semilla.
@@ -607,16 +609,18 @@ def turno_usuario(fila, columna, tablero):
                     tablero[fila][i] = "🚲"
         # Si la respuesta es uno, se colocará vertical.
         else:
+            tmp_fila = fila
             # Moverse abajo de la columna.
-            for i in reversed(range(0, fila)):
+            while tmp_fila - 1 >= 0:
                 # Si se encuentra una planta o una semilla.
                 # Se deja de poner ciclovía.
-                if tablero[i][columna] == "🌻" or tablero[i][columna] == "🌱":
+                if (tablero[tmp_fila-1][columna] == "🌻" or
+                        tablero[tmp_fila-1][columna] == "🌱"):
                     break
                 # De no ser así, se colocará ciclovia.
                 else:
-                    tablero[i][columna] = "🚲"
-
+                    tablero[tmp_fila-1][columna] = "🚲"
+                tmp_fila -= 1
             # Moverse arriba de la columna.
             for i in range(fila, len(tablero)):
                 # Si se encuentra una planta o una semilla.
