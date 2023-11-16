@@ -672,8 +672,8 @@ def menu():
                                                "(s/n): ", ["s", "n"])
                 break
             elif revisar_derrota(tablero) is True:
-                print_en_colores("Oh no, la muni ha llenado una fila con "
-                                 "cemento. Perdiste :(", "r")
+                print_en_colores("Oh no, la muni ha llenado una fila/columna "
+                                 "con cemento. Perdiste :(", "r")
                 ask_decision = preguntar_texto("¿Desea volver a jugar? "
                                                "(s/n): ", ["s", "n"])
                 break
