@@ -102,7 +102,9 @@ def generar_tablero():
     de llamar a esta función.
     """
     # Se crea una lista con opciones válidas.
-    opciones_validas = [str(i) for i in range(3, 101)]
+    opciones_validas = []
+    for i in range(3, 101):
+        opciones_validas += [str(i)]
     # Se crean dos iteradores.
     i = 0
     j = 0
