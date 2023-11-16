@@ -1,3 +1,6 @@
+# PROYECTO #2: SOLARPUNK.
+# INTEGRANTES: Daniel Alemán y Keylor Miranda.
+
 from random import randint
 import urllib.parse
 
